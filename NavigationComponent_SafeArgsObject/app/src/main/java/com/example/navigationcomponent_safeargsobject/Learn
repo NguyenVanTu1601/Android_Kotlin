@@ -1,0 +1,4 @@
+Để truyền các custom class
+B1 : Class phải extends Parcelable
+B2 : Thêm annotation : @Parcelize trên class
+B3 : Ở fragment muốn nhận thêm arguments : custom Parcelable

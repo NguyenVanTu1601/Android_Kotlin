@@ -1,0 +1,2 @@
+ViewModel đóng vai trò cầu nối, thực hiện gọi các thao tác, bảo toàn dữ liệu cho UI
+LiveData nhưng 1 dạng kiểu dữ liệu mới, lưu trữ các giá trị , cập nhật sự thay đổi các giá trị cho các đối tượng chỉ khi đối tượng đó còn sống

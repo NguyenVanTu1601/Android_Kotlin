@@ -1,0 +1,3 @@
+@TypeConverter : Dùng để đánh dấu các dữ liệu cần conver trước khi lưu vào room database
++ TypeConverter : Đánh dấu trong class có hàm conver (Converters class)
++ TypeConverters : Đánh dấu class trong database (MyDatabase class)

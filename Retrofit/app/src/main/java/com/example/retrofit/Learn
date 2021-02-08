@@ -1,0 +1,2 @@
+- Repository là cầu nối giữa simpleAPI và MainViewModel. Qúa trình sửa từ simpleAPI -> Repository -> MainViewModel
+- RetrofitInstance là cầu nối của SimpleAPI và Repository.

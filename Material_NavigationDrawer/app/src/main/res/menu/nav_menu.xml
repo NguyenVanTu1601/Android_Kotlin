@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="STORAGE">
+        <menu>
+            <item android:title="My Files"
+                android:icon="@drawable/ic_baseline_insert_drive_file_24"/>
+            <item android:title="Shared"/>
+            <item android:title="Started"/>
+            <item android:title="Recent"/>
+            <item android:title="Backup"/>
+        </menu>
+    </item>
+
+    <item android:title="APP">
+        <menu>
+            <item android:title="My Files"/>
+            <item android:title="Shared"/>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,32 @@
+Three Key Part :
+- Navigation graph : Là một file xml resource
+- NavHost/NavHostFragment : Là một container hiển thị mô tả về navigation graph
+- NavController : Kết nối chuyển đổi giữa các fragment
+- Phân biệt EnterAnim, ExitAnim, PopEnter, PopExit :
+    Với  Sự chuyển dịch từ A -> B : B sẽ áp dụng EnterAnim còn A áp dụng ExitAnim
+    Với sự Back lại từ B về A : A sẽ áp dụng PopEnterAnim và B áp dụng PopExitAnim
+    Tất cả các Anim này đều khai báo trong action của feagment A file my_nav xml
+
+1. Muốn chuyển fragment thành fragment start thì chuột phải vào fragment(trong file xml my_nav) -> chọn set as start destination
+2. Cac bước chuẩn bị
+Bước 1 : Chuẩn bị file my_nav
+Bước 2 : Trong activity_main (xml) chèn thêm NavHostFragment
+Bước 3 : Muốn chuyển đổi giữa các fragment : Navigation.findNavController(context).navigation(id action)
+3. Truyền dữ liệu từ Fragment A sang Fragment B thông qua Argument : Bên b sẽ viết args để nhận
+Thêm vào các file gradle : id 'kotlin-android-extensions'
+                           id 'androidx.navigation.safeargs.kotlin'
+def nav_version = "2.3.0-alpha04"
+classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+Bên truyền : var action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(22)
+             Navigation.findNavController(view).navigate(action)
+Bên nhận : val args : SecondFragmentArgs by navArgs()
+           val myNumber = args.number
+
+4. Navigation Drawer
+- Chuyển layout chính về DrawerLayout
+- Thêm NavigationView : thuộc tính layout_gravity = "start"
+- Khai báo trong mainActivity : navController,  drawerLayout,  appBarConfiguration, setupActionBarWithNavController( tạo actionBar)
+- Tạo DrawerMenu là cái mà kéo sang để nhìn thấy
+ + Nếu id trong drawer menu trùng với id fragment thì nó sẽ tự động gọi fragment để hiển thị
+- Đóng mở drawer và lắng nghe sự kiện đổi fragment

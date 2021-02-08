@@ -1,0 +1,4 @@
+Sử dụng trong app
++ ViewBinding
++ Navigation Component
++ String array trong rouces string -> set các hash alogrithms, xử lý trong homeFragment

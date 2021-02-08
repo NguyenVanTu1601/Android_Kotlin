@@ -1,0 +1,8 @@
+- Để chặn việc từ home back về Splash thì trong my_nav ta làm như sau :
++ Chọn đường nối từ Splash tới Home
++ Nhìn sang Pop Behavior
++ PopUpTo chọn fragment gốc (splashFragment)
++ PopUpToInclusive chọn true
+-> Làm tương tự để chặn việc back lại từ viewPager
+
+Trong bài có sử dụng SharePreference cải tiến của kotlin, xem bài SharePreference để hiểu rõ hơn

@@ -1,0 +1,32 @@
+* Sử dụng room database
+- Model : Lớp thực thể
+- DAO : Là interface chứa các phương thức truy cập csdl
+- Repository :
+    + Tham số vào là dao
+    + Sử dụng như trung gian để gọi dao
+- ViewModel :
+    + Chứa repository dùng để gọi tới dao : viewmodel -> repository -> dao -> model
+
+* Một số anomation
++ @Embedded : Chứa đựng 1 Entity bên trong 1 entity khác chẳng hạn Person chứa Address, tuy nhiên ko thể chứa các trường như Date, Bitmap
+                Muốn chứa các trg ko được phép này cần sử dụng @TypeConverter. Việc sử dụng insert ... như room thông thường.
+    Ví dụ :
+    data class Address(
+        val streetName : String,
+        val streetNumber : Int
+    )
+
+    data class Person(
+        val name : String,
+        val age : Int,
+
+        @Embedded
+        val address : Address
+    )
+
++ @TypeConverter :
+    Ví dụ :
+
++ @Transaction : Dùng thực thi nhiều truy vấn tránh lỗi
++ @Relation : biểu diễn quan hệ 1-1, 1-n, n-n
+Tìm hiểu thêm tại : https://developer.android.com/reference/android/arch/persistence/room/Embedded

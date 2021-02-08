@@ -1,0 +1,4 @@
+- Tao file xml navigation my_nav + thêm navHostFragment vào activity_main (xml)
+- Thêm BottomNavigationView vào activity_main (xml)
+- Tạo Menu(xml) để thêm vào Bottom để hiển thị
+ + Đặt id các item trong menu trùng với id các fragment để tự gọi đỡ cần goi = tay như bản java cũ
